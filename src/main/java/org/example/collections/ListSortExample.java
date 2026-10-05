@@ -28,22 +28,22 @@ Cao 3 = nome: Max, idade: 4, raça: Labrador
         System.out.println("--\tOrdem de Inserção\t---");
         System.out.println(dogs);
 
-        System.out.println("--\tOrdem aleatória\t---");
-        Collections.shuffle(dogs);
-        System.out.println(dogs);
+        //System.out.println("--\tOrdem aleatória\t---");
+        //Collections.shuffle(dogs);
+        //System.out.println(dogs);
 
         System.out.println("--\tOrdem Natural (Nome)\t---");
         // The following code will present an error: no instance(s) of type variable(s) T exist so that Dog conforms to Comparable<? super T>
-        //Collections.sort(dogs);
-        // After showing the reason, change class Dog to implement interface Comparable<Dog>
         Collections.sort(dogs);
-        //System.out.println(dogs);
+        // After showing the reason, change class Dog to implement interface Comparable<Dog>
+        //Collections.sort(dogs);
+        System.out.println(dogs);
 
         System.out.println("--\tOrdem Idade\t---");
         // We need to create a new class that implements Comparator<T>
         // Than we have the two following options to sort
-//        Collections.sort(dogs, new ComparatorIdade());
-        //dogs.sort(new ComparatorIdade());
+        //Collections.sort(dogs, new ComparatorIdade());
+        dogs.sort(new ComparatorIdade());
         System.out.println(dogs);
 
         System.out.println("--\tOrdem raça\t---");
@@ -55,10 +55,13 @@ Cao 3 = nome: Max, idade: 4, raça: Labrador
 //        Collections.sort(dogs, new ComparatorNomeRacaIdade());
         dogs.sort(new ComparatorNomeRacaIdade());
         System.out.println(dogs);
+
+
     }
 }
 
-class Dog implements Comparable<Dog>{
+//class Dog {
+class Dog implements Comparable<org.example.collections.Dog>{
     private String nome;
     private int idade;
     private String raca;
@@ -102,6 +105,8 @@ class ComparatorIdade implements Comparator<Dog> {
         return Integer.compare(d1.getIdade(), d2.getIdade());
     }
 }
+
+
 
 class ComparatorRaca implements Comparator<Dog> {
     @Override
