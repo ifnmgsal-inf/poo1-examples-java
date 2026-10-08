@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static List<Dog> dogs = new ArrayList<>();
+    private static final List<Dog> dogs = new ArrayList<>();
     private static final int SAIR = 6;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int opcao = 0;
+        int opcao;
         do {
             montaMenu();
             opcao = sc.nextInt();
@@ -39,6 +39,7 @@ public class Main {
                     System.out.println("Opção inválida!");
             }
         } while (opcao != SAIR);
+        sc.close();
     }
 
     private static void listarOrdenadoPorIdade() {
