@@ -1,0 +1,5 @@
+Arquivo texto para teste de POO I.
+Nova frase para o arquivo.
+Novo método leitor.
+Agora sim com o leitor completo!
+Uma nova versao do metodo escritor!
